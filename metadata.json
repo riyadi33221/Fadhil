@@ -1,0 +1,8 @@
+{
+  "name": "Remix Sistem Analisis Asesmen Sumatif (SAAS) PJOK v.6 SMPN 2 Kutasari",
+  "description": "Aplikasi analisis hasil penilaian harian (PH 1-10), analisis ketuntasan belajar, program remedial dan pengayaan dengan kustomisasi mata pelajaran serta cetak dokumen Hal 1, 2, 3, dan 4 untuk guru SMP Negeri 2 Kutasari.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

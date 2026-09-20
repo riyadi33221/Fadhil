@@ -1,0 +1,87 @@
+{
+  "entities": {
+    "schoolProfile": {
+      "title": "School Profile",
+      "description": "Information about school, teacher, and principal",
+      "type": "object",
+      "properties": {
+        "schoolName": { "type": "string" },
+        "schoolAddress": { "type": "string" },
+        "logoUrl": { "type": "string" },
+        "subject": { "type": "string" },
+        "gradeLevel": { "type": "string" },
+        "teacherName": { "type": "string" },
+        "teacherNip": { "type": "string" },
+        "principalName": { "type": "string" },
+        "principalNip": { "type": "string" },
+        "academicYear": { "type": "string" },
+        "semester": { "type": "string" },
+        "location": { "type": "string" },
+        "reportDate": { "type": "string" }
+      }
+    },
+    "assessmentItem": {
+      "title": "Assessment Item",
+      "description": "Penilaian Harian configuration (PH 1-10)",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "code": { "type": "string" },
+        "title": { "type": "string" },
+        "topic": { "type": "string" },
+        "learningObjective": { "type": "string" },
+        "kkm": { "type": "number" },
+        "itemMaxScores": { "type": "array" },
+        "totalMaxScore": { "type": "number" }
+      }
+    },
+    "student": {
+      "title": "Student",
+      "description": "Student record across classes",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "nis": { "type": "string" },
+        "name": { "type": "string" },
+        "gender": { "type": "string" },
+        "classId": { "type": "string" }
+      }
+    },
+    "scoreRecord": {
+      "title": "Score Record",
+      "description": "Assessment scores per student per PH",
+      "type": "object",
+      "properties": {
+        "studentId": { "type": "string" },
+        "phId": { "type": "string" },
+        "classId": { "type": "string" },
+        "itemScores": { "type": "array" },
+        "totalScore": { "type": "number" },
+        "percentageScore": { "type": "number" },
+        "isPassed": { "type": "boolean" },
+        "remedialScore": { "type": "number" },
+        "postRemedialPercentage": { "type": "number" },
+        "isPassedPostRemedial": { "type": "boolean" },
+        "remedialNotes": { "type": "string" }
+      }
+    }
+  },
+  "firestore": {
+    "/workspaces/{wsId}/school_profile/{docId}": {
+      "schema": "schoolProfile",
+      "description": "School profile settings per workspace"
+    },
+    "/workspaces/{wsId}/ph_items/{phId}": {
+      "schema": "assessmentItem",
+      "description": "Assessment items per workspace"
+    },
+    "/workspaces/{wsId}/students/{studentId}": {
+      "schema": "student",
+      "description": "Students list per workspace"
+    },
+    "/workspaces/{wsId}/scores/{scoreId}": {
+      "schema": "scoreRecord",
+      "description": "Student scores per workspace"
+    }
+  }
+}
